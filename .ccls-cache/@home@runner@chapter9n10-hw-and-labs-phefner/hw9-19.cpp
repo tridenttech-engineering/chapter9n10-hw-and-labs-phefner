@@ -11,6 +11,7 @@ double getPayment(int, double, int);
 
 int main()
 {
+    //declare variables
     int carPrice = 0;
     int rebate = 0;
     double creditRate = 0.0;
@@ -33,28 +34,27 @@ int main()
     //call function to calculate payments
     creditPayment = getPayment(carPrice - rebate,
         creditRate / 12, term * 12);
-    dealerPayment = getPayment(carPrice,
+    dealerPayment = getPayment(carPrice, 
         dealerRate / 12, term * 12);    //assign values to calculate payments
-
+    
     //display payments
-    cout << fixed << setprecision(2) << endl;
-    cout << "Credit union payment: $"
+    cout << fixed << setprecision(2) << endl; 
+    cout << "Credit union payment: $" 
         << creditPayment << endl;
     cout << "Dealer payment: $"
         << dealerPayment << endl;
+    
     return 0;
-}//end of main function
-//*****function definitions*****
+}//end of main function    
+
+    //*****function definitions*****
 double getPayment(int prin,
-                  double monthRate,
+                  double monthRate, 
                   int months)
 {
     //calculates and returns a monthly payment
     double monthPay = 0.0;
-    monthPay = prin * monthRate /
+    monthPay = prin * monthRate / 
         (1 - pow(monthRate + 1, -months));
     return monthPay;
-    
-
-    
-}//end of main function    
+} //end of getPayment function//*****function definition*****
