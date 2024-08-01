@@ -5,9 +5,20 @@
 #include <cmath>
 #include <iomanip>
 using namespace std;
+{
 
-//function prototype
-double getPayment(int, double, int);
+//here we are calculating how much monthly the user has to pay double getPayment(int amount, double rate, int months)
+
+   //if months is 0, return -1 if (months == 0)
+        return -1;
+
+    double interest = amount * rate * months / (100);
+
+    double total = amount + interest;
+
+    return total / months;
+}
+
 
 int main()
 {
